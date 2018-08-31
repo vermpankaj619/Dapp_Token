@@ -1,21 +1,18 @@
- pragma solidity ^0.4.19;
+pragma solidity ^0.4.2;
 
-    contract DappToken {
-    	  //Name 
-          string public name ="Dapp Token";
-          //Symbol
-           string public symbol ="DAPP";
+contract DappToken {
+    string  public name = "DApp Token";
+    string  public symbol = "DAPP";
+    string  public standard = "DApp Token v1.0";
+    uint256 public totalSupply;
 
-           string public standard ="Dapp token v1.0";
+    event Transfer(
+        address indexed _from,
+        address indexed _to,
+        uint256 _value
+    );
 
-    	uint256 public totalSupply; 
-
-        event Transfer(
-            address indexed _from,
-            address indexed _to,
-            uint256 _value
-        );
- event Approval(
+    event Approval(
         address indexed _owner,
         address indexed _spender,
         uint256 _value
@@ -47,5 +44,20 @@
 
         return true;
     }
+
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+        require(_value <= balanceOf[_from]);
+        require(_value <= allowance[_from][msg.sender]);
+
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+
+        allowance[_from][msg.sender] -= _value;
+
+        Transfer(_from, _to, _value);
+
+        return true;
+    }
 }
- 
+
+
