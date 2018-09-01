@@ -1,0 +1,28 @@
+{
+  "name": "dapp_token",
+  "version": "1.0.0",
+  "description": "Dapp Token Sale ICO",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "dependencies": {
+    "truffle": "^4.1.14"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermpankaj619/Dapp_Token.git"
+  },
+  "author": "Pankaj Verma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vermpankaj619/Dapp_Token/issues"
+  },
+  "homepage": "https://github.com/vermpankaj619/Dapp_Token#readme"
+}
